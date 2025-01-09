@@ -1,0 +1,23 @@
+.tableContainer {
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    padding: 1rem;
+    background-color: white;
+}
+
+table {
+    border-spacing: 0;
+}
+
+th {
+    background-color: #f3f4f6;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+td, th {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
