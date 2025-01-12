@@ -5,7 +5,7 @@ import SortableHeader from './SortableHeader';
 function FilterableTable() {
 
   useEffect(() => {
-    makeAPICall();  // Call your function
+    makeAPICall();  // Call Once on Render 
   }, []);
 
   const [dateAscending, setDateAscending] = useState(false);
@@ -40,7 +40,7 @@ function FilterableTable() {
   }
   const makeAPICall = () =>{
     const params = `leftDate=${startYear}&rightDate=${endYear}&leftRevenue=${leftRevenue}&rightRevenue=${rightRevenue}&leftNet=${leftNet}&rightNet=${rightNet}`
-    const apiUrl = `http://127.0.0.1:5000/get-filtered-data?${params}`
+    const apiUrl = `https://financial-data-filtering-backend.onrender.com/get-filtered-data?${params}`
     fetch(apiUrl, {
       method: "GET", 
       headers: {
