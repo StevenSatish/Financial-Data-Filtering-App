@@ -5,7 +5,7 @@ from flask_cors import CORS
 import os
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "https://stevensatish.github.io/Financial-Data-Filtering-App/"}})
+CORS(app, origins=["https://stevensatish.github.io/*"])
 load_dotenv()
 
 # Load the API key
