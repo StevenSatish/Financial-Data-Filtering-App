@@ -1,11 +1,6 @@
 .tableContainer {
-    border-style: solid;
-    border-color: black;
-    border-width: 2px;
-    padding: 1rem;
     background-color: white;
 }
-
 table {
     border-spacing: 0;
 }
