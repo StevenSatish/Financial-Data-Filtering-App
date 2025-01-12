@@ -1,5 +1,6 @@
 # Financial Data Filtering App
 🌐 [Visit the Live Website!](https://stevensatish.github.io/Financial-Data-Filtering-App/)
+(Due to free hosting limitations, it may take up to a minute for the data to be fetched)
 # 🚀 Local Setup
 ## Prerequisites
 - Python and Node.js
