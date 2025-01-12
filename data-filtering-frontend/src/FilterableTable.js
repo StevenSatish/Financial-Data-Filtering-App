@@ -20,12 +20,12 @@ function FilterableTable() {
 
   const handleSort = (key) => {
     const sorted = [...sortedData].sort((a, b) => {
-        if (key == 'date'){
+        if (key === 'date'){
           return dateAscending 
             ? new Date(b['date']) - new Date(a['date'])
             : new Date(a['date']) - new Date(b['date']);
         }
-        else if (key == 'revenue'){
+        else if (key === 'revenue'){
           return revenueAscending
           ? b['revenue'] - a['revenue']
           : a['revenue'] - b['revenue'];
@@ -55,10 +55,6 @@ function FilterableTable() {
       .then((data) => {
         for (let i = 0; i < data.length; i++) {
             data[i].transactionID = i;
-            data[i].grossProfit = Number(data[i].grossProfit).toLocaleString();
-            data[i].netIncome = Number(data[i].netIncome).toLocaleString();
-            data[i].operatingIncome = Number(data[i].operatingIncome).toLocaleString();
-            data[i].revenue = Number(data[i].revenue).toLocaleString();
         }
         setSortedData(data);
       })
@@ -196,11 +192,11 @@ function FilterableTable() {
                 {sortedData.map((row) => (
                     <tr key={row.transactionID} className="odd:bg-white even:bg-gray-50 border-b border-black">
                       <td className="whitespace-nowrap w-auto px-3 md:px-6 py-2 md:py-3 border-r border-black text-center">{row.date}</td>
-                      <td className="whitespace-nowrap w-auto px-3 md:px-6 py-2 md:py-3 border-r border-black text-center">{row.revenue}</td>
-                      <td className="whitespace-nowrap w-auto px-3 md:px-6 py-2 md:py-3 border-r border-black text-center">{row.netIncome}</td>
-                      <td className="whitespace-nowrap w-auto px-3 md:px-6 py-2 md:py-3 border-r border-black text-center">{row.grossProfit}</td>
+                      <td className="whitespace-nowrap w-auto px-3 md:px-6 py-2 md:py-3 border-r border-black text-center">{row.revenue.toLocaleString()}</td>
+                      <td className="whitespace-nowrap w-auto px-3 md:px-6 py-2 md:py-3 border-r border-black text-center">{row.netIncome.toLocaleString()}</td>
+                      <td className="whitespace-nowrap w-auto px-3 md:px-6 py-2 md:py-3 border-r border-black text-center">{row.grossProfit.toLocaleString()}</td>
                       <td className="whitespace-nowrap w-auto px-3 md:px-6 py-2 md:py-3 border-r border-black text-center">{row.eps}</td>
-                      <td className="whitespace-nowrap w-auto px-3 md:px-6 py-2 md:py-3 text-center">{row.operatingIncome}</td>
+                      <td className="whitespace-nowrap w-auto px-3 md:px-6 py-2 md:py-3 text-center">{row.operatingIncome.toLocaleString()}</td>
                     </tr>
                 ))}
               </tbody>
